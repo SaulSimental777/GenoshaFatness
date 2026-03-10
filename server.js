@@ -4,9 +4,15 @@ import * as dotenv from 'dotenv';
 import morgan from 'morgan';
 import cookieParser from 'cookie-parser'
 import 'express-async-errors';
+import cors from 'cors';
 
 dotenv.config();
 const app = express();
+
+app.use(cors({
+  origin: 'http://localhost:5173',
+  credentials: true,
+}));
 
 if(process.env.NODE_ENV === 'development'){
     app.use(morgan('dev'));
@@ -86,4 +92,4 @@ app.use((err, req, res, next) => {
 
 })
 
-////mongodb+srv://l23211003:Volga300ac@genoshafitness.mswb5.mongodb.net/
+
