@@ -24,17 +24,8 @@ export const login = async (req, res) => {
     if(!isPasswordCorrect) throw new UnauthenticatedError('invalid credentials');
 
     const token = createJWT({userId:user._id, role:user.role})
-    const oneDay = 1000 *60*60*24
 
-    res.cookie('token', token,{
-        httpOnly:true,
-        expires: new Date(Date.now() + oneDay),
-        secure: true,
-        sameSite: 'none',
-    })
-
-    res.status(StatusCodes.OK).json({ msg: 'user logged in' })
-
+    res.status(StatusCodes.OK).json({ msg: 'user logged in', token })
 }
 
 
@@ -51,16 +42,9 @@ export const logout = async (req, res) => {
 }
 
 export const checkLoggedUser = async (req, res) => {
-    
-    const {token} = req.cookies; 
-        
-    if (!token) {
+    const authHeader = req.headers.authorization
+    if (!authHeader || !authHeader.startsWith('Bearer ')) {
         return res.json(false);
     }
-    else{
-        return res.json(true)
-    }
-
-
-
+    return res.json(true)
 }
