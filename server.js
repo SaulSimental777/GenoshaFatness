@@ -39,7 +39,7 @@ import { fileURLToPath } from "url";
 import path from "path";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-app.use(express.static(path.resolve(__dirname, "./public/uploads")));
+
 
 // Routes
 app.use('/api/v1/routines', routineRouter);
@@ -52,6 +52,8 @@ app.use('/api/v1/dailylog', dailyLogRouter)
 app.use('/api/v1/virtualInstructor', virtualInstructorRouter)
 app.use('/api/v1/videos', videoReferenceRouter)
 app.use('/api/v1/news', fitnessNewsRouter)
+
+app.use(express.static(path.resolve(__dirname, "./public/uploads")));
 
 app.use('*', (req, res) => {
     res.status(404).json({ msg: 'not found' })
