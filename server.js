@@ -1,7 +1,6 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import * as dotenv from 'dotenv';
-import morgan from 'morgan';
 import cookieParser from 'cookie-parser'
 import 'express-async-errors';
 import cors from 'cors';
@@ -17,10 +16,6 @@ app.use(cors({
 
 app.use(cookieParser());
 app.use(express.json());
-
-if(process.env.NODE_ENV === 'development'){
-    app.use(morgan('dev'));
-}
 
 // routers
 import routineRouter from './Routes/routineRouter.js'
@@ -58,31 +53,26 @@ app.use('/api/v1/virtualInstructor', virtualInstructorRouter)
 app.use('/api/v1/videos', videoReferenceRouter)
 app.use('/api/v1/news', fitnessNewsRouter)
 
-// NOT FOUND 
 app.use('*', (req, res) => {
     res.status(404).json({ msg: 'not found' })
 })
 
 app.use(errorHandlerMiddleware);
-
 app.use((err, req, res, next) => {
     console.log(err)
     res.status(500).json({msg: 'something went wrong'})
 })
 
-// Connect to MongoDB then start server locally, or just export for Vercel
-const connectDB = async () => {
-    await mongoose.connect(process.env.MONGO_URL);
-}
+const port = process.env.PORT || 5101
 
-if(process.env.NODE_ENV !== 'production') {
-    const port = process.env.PORT || 5101
-    connectDB().then(() => {
-        app.listen(port, () => console.log(`server running on PORT ${port}...`))
-    }).catch(console.log)
-} else {
-    // Vercel: connect on each request if not connected
-    mongoose.connection.readyState === 0 && connectDB()
+try {
+    await mongoose.connect(process.env.MONGO_URL);
+    app.listen(port, () => {
+        console.log(`server running on PORT ${port}...`);
+    });
+} catch (error){
+    console.log(error);
+    process.exit(1);
 }
 
 export default app;
