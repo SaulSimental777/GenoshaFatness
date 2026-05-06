@@ -15,27 +15,14 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 
+app.use(cookieParser());
+app.use(express.json());
+
 if(process.env.NODE_ENV === 'development'){
     app.use(morgan('dev'));
 }
 
-const port = process.env.PORT || 5101
-
-try {
-    await mongoose.connect(process.env.MONGO_URL);
-    app.listen(port, () => {
-        console.log(`server running on PORT ${port}...`);
-    });
-} catch (error){
-    console.log(error);
-    process.exit(1);
-}
-
-app.use(cookieParser());
-app.use(express.json());
-
 // routers
-
 import routineRouter from './Routes/routineRouter.js'
 import recipeRouter from './Routes/recipeRouter.js'
 import foodRouter from './Routes/foodRouter.js'
@@ -47,30 +34,24 @@ import virtualInstructorRouter from './Routes/virtualInstructorRouter.js'
 import videoReferenceRouter from './Routes/videoReferenceRouter.js'
 import fitnessNewsRouter from './Routes/fitnessNewsRouter.js'
 
-
 // middleware
-
 import errorHandlerMiddleware from './Middleware/errorHandlerMiddleware.js'
 import { authenticateUser } from './Middleware/authMiddleware.js';
 
-
-//public
-
+// public
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 import path from "path";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-
 app.use(express.static(path.resolve(__dirname, "./public/uploads")));
 
 // Routes
-
 app.use('/api/v1/routines', routineRouter);
 app.use('/api/v1/recipes', recipeRouter);
 app.use('/api/v1/exercises', exerciseRouter);
 app.use('/api/v1/food', foodRouter);
-app.use('/api/v1/users', authenticateUser,userRouter);
+app.use('/api/v1/users', authenticateUser, userRouter);
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/dailylog', dailyLogRouter)
 app.use('/api/v1/virtualInstructor', virtualInstructorRouter)
@@ -84,13 +65,24 @@ app.use('*', (req, res) => {
 
 app.use(errorHandlerMiddleware);
 
-// INTERNAL SERVER ERROR
-
 app.use((err, req, res, next) => {
-
     console.log(err)
     res.status(500).json({msg: 'something went wrong'})
-
 })
 
+// Connect to MongoDB then start server locally, or just export for Vercel
+const connectDB = async () => {
+    await mongoose.connect(process.env.MONGO_URL);
+}
 
+if(process.env.NODE_ENV !== 'production') {
+    const port = process.env.PORT || 5101
+    connectDB().then(() => {
+        app.listen(port, () => console.log(`server running on PORT ${port}...`))
+    }).catch(console.log)
+} else {
+    // Vercel: connect on each request if not connected
+    mongoose.connection.readyState === 0 && connectDB()
+}
+
+export default app;
