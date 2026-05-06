@@ -7,44 +7,39 @@ import jwt from 'jsonwebtoken'
 
 export const getAllRoutines = async (req, res) => {
     try{
-
-        const {token} = req.cookies; 
-        
-        if (!token) {
+        const authHeader = req.headers.authorization
+        if (!authHeader || !authHeader.startsWith('Bearer ')) {
             return res.status(StatusCodes.UNAUTHORIZED).json({ error: 'Authentication token missing' });
         }
-
+        const token = authHeader.split(' ')[1]
         const decoded = jwt.verify(token, process.env.JWT_SECRET)
         const userId = decoded.userId
         const user = await User.findById(userId).populate('routines');
         res.status(StatusCodes.OK).json({ routines: user.routines})
-
     } catch (error) {
         res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ msg: 'Error retrieving routines', error})
         console.log(error)
     }
-
 }
+
 
 export const addRoutine = async (req, res) => {
     try{
-        const {token} = req.cookies; 
-        
-        if (!token) {
+        const authHeader = req.headers.authorization
+        if (!authHeader || !authHeader.startsWith('Bearer ')) {
             return res.status(StatusCodes.UNAUTHORIZED).json({ error: 'Authentication token missing' });
         }
-        const decoded = jwt.verify(token, process.env.JWT_SECRET); 
+        const token = authHeader.split(' ')[1]
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
         const userId = decoded.userId;
         const user = await User.findById(userId);
-        const username = user.name; 
-        const userLastname = user.lastName; 
+        const username = user.name;
+        const userLastname = user.lastName;
 
         const blockOne = `${username.charAt(0)}${userLastname.charAt(0)}`;
         const blockTwo = userId.toString().slice(-4);
-        const blockThree = Math.floor(Math.random() * 1000) +1;
-
+        const blockThree = Math.floor(Math.random() * 1000) + 1;
         const uniqueId = `${blockOne}${blockTwo}-${blockThree}`
-
 
         const routine = await Routine.create({
             ...req.body,
@@ -53,13 +48,7 @@ export const addRoutine = async (req, res) => {
         });
         user.routines.push(routine._id)
         await user.save()
-
-
-
         res.status(StatusCodes.CREATED).json({routine});
-
-
-
     } catch (error) {
         res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({error: 'Unexpected error creating the routine'})
         console.log(error)
@@ -158,15 +147,12 @@ export const updateRoutineExercise = async(req, res) => {
 }
 
 export const sharedRoutine = async(req, res) => {
-
-    const{routineId } = req.body;
-
-    const {token} = req.cookies; 
-        
-    if (!token) {
+    const { routineId } = req.body;
+    const authHeader = req.headers.authorization
+    if (!authHeader || !authHeader.startsWith('Bearer ')) {
         return res.status(StatusCodes.UNAUTHORIZED).json({ error: 'Authentication token missing' });
     }
-
+    const token = authHeader.split(' ')[1]
     const decoded = jwt.verify(token, process.env.JWT_SECRET)
     const userId = decoded.userId
     const user = await User.findById(userId);
@@ -176,22 +162,15 @@ export const sharedRoutine = async(req, res) => {
         if(!routine){
             return res.status(StatusCodes.NOT_FOUND).json({ msg: 'Routine not found'})
         }
-
         if(routine.createdBy == userId){
             return res.status(StatusCodes.CONFLICT).json({msg: 'Rutina ya creada por el usuario'})
         }
-
         user.routines.push(routine._id)
         await user.save();
-
         return res.status(StatusCodes.OK).json({msg: 'Routine Added'})
-
-       
-    }
-    catch (error){
+    } catch (error){
         console.log(error)
         return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({msg: 'Error adding Routine'})
     }
-
 }
 

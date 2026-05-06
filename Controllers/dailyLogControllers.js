@@ -7,13 +7,11 @@ import Routine from '../Models/routineModel.js'
 
 
 export const createDailyLog = async (req, res) => {
-
-    const {token} = req.cookies; 
-
-    if (!token) {
+    const authHeader = req.headers.authorization
+    if (!authHeader || !authHeader.startsWith('Bearer ')) {
         return res.status(StatusCodes.UNAUTHORIZED).json({ error: 'Authentication token missing' });
     }
-
+    const token = authHeader.split(' ')[1]
     const decoded = jwt.verify(token, process.env.JWT_SECRET)
     const userId = decoded.userId
 
@@ -32,15 +30,10 @@ export const createDailyLog = async (req, res) => {
     if(!dailyLog) {
         dailyLog = new DailyLog({ userId });
         await dailyLog.save();
-        res.status(StatusCodes.CREATED).json({dailyLog});
+        return res.status(StatusCodes.CREATED).json({dailyLog});
     }
 
     res.status(StatusCodes.OK).json({dailyLog});
-
-    return dailyLog
-
-    
-
 }
 
 

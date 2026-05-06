@@ -4,46 +4,41 @@ import User from '../Models/userModel.js'
 import Food from '../Models/foodModel.js'
 import jwt from 'jsonwebtoken'
 
-export const getAllRecipes = async (req, res) =>{
-    try{
-
-        const {token} = req.cookies; 
-        
-        if (!token) {
+export const getAllRecipes = async (req, res) => {
+    try {
+        const authHeader = req.headers.authorization
+        if (!authHeader || !authHeader.startsWith('Bearer ')) {
             return res.status(StatusCodes.UNAUTHORIZED).json({ error: 'Authentication token missing' });
         }
 
+        const token = authHeader.split(' ')[1]
         const decoded = jwt.verify(token, process.env.JWT_SECRET)
         const userId = decoded.userId
         const user = await User.findById(userId).populate('recipes');
-        res.status(StatusCodes.OK).json({ recipes: user.recipes})
-
+        res.status(StatusCodes.OK).json({ recipes: user.recipes })
     } catch (error) {
-        res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ msg: 'Error retrieving routines', error})
+        res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ msg: 'Error retrieving routines', error })
         console.log(error)
     }
-
 }
 
 export const addRecipe = async (req, res) => {
     try{
-        const {token} = req.cookies; 
-        
-        if (!token) {
+        const authHeader = req.headers.authorization
+        if (!authHeader || !authHeader.startsWith('Bearer ')) {
             return res.status(StatusCodes.UNAUTHORIZED).json({ error: 'Authentication token missing' });
         }
-        const decoded = jwt.verify(token, process.env.JWT_SECRET); 
+        const token = authHeader.split(' ')[1]
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
         const userId = decoded.userId;
         const user = await User.findById(userId);
-        const username = user.name; 
-        const userLastname = user.lastName; 
+        const username = user.name;
+        const userLastname = user.lastName;
 
         const blockOne = `${userLastname.charAt(0)}${username.charAt(0)}`;
         const blockTwo = userId.toString().slice(-4);
-        const blockThree = Math.floor(Math.random() * 1000) +1;
-
+        const blockThree = Math.floor(Math.random() * 1000) + 1;
         const uniqueId = `${blockOne}${blockTwo}-${blockThree}`
-
 
         const recipe = await Recipe.create({
             ...req.body,
@@ -52,15 +47,9 @@ export const addRecipe = async (req, res) => {
         });
         user.recipes.push(recipe._id)
         await user.save()
-
-
-
         res.status(StatusCodes.CREATED).json({recipe});
-
-
-
     } catch (error) {
-        res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({error: 'Unexpected error creating the routine'})
+        res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({error: 'Unexpected error creating the recipe'})
         console.log(error)
     }
 }
