@@ -2,6 +2,7 @@ import { UnauthenticatedError, UnauthorizedError } from '../Errors/customErrors.
 import { verifyJWT } from '../Utils/tokenUtils.js'
 
 export const authenticateUser = (req, res, next) => {
+    console.log('Auth header:', req.headers.authorization)
     const authHeader = req.headers.authorization
     if(!authHeader || !authHeader.startsWith('Bearer '))
         throw new UnauthenticatedError('authentication invalid')
