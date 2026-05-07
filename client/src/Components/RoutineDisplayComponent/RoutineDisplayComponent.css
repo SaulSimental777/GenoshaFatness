@@ -1,0 +1,134 @@
+.routine-workout-collection-container {
+  display: grid;
+  margin: auto;
+  width: fit-content;
+  gap: 20px;
+  height: fit-content;
+  margin-left: 225px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.routine-collection {
+  background-color: white;
+  margin: auto;
+  width: 750px;
+  display: flex;
+  height: fit-content;
+  justify-content: space-between;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px 1px rgb(0, 0, 0, 0.1);
+  grid-template-columns: 1fr 1fr;
+}
+
+.routinecollection-left img {
+  height: 200px;
+}
+
+.routinecollection-data {
+  margin-top: 10px;
+  margin-left: 5px;
+  width: fit-content;
+  margin-right: 10px;
+  display: grid;
+  gap: 5px;
+}
+
+.routinecollection-data p {
+  text-align: justify;
+  color: rgb(114, 113, 113);
+}
+
+.routinecollection-options {
+  margin-left: 5px;
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  width: fit-content;
+  margin-bottom: 20px;
+}
+
+.routinecollection-options button {
+  background-color: #0099ff;
+  border-radius: 10px;
+  border-color: transparent;
+  color: white;
+  cursor: pointer;
+  height: 30px;
+  width: 250px;
+}
+
+.sets-window-display {
+  position: fixed;
+  inset: 0;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+  opacity: 0;
+  transition: 0.3s ease-in-out all;
+  visibility: hidden;
+  margin: auto;
+  background-color: white;
+  width: 550px;
+  height: 225px;
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow-y: auto;
+  margin-left: 775px;
+}
+
+.show-window {
+  z-index: 99;
+  opacity: 1;
+  visibility: visible;
+}
+
+.sets-window-buttons {
+  display: grid;
+  gap: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 15px;
+}
+
+.sets-window-buttons button {
+  background-color: #0099ff;
+  color: white;
+  border-color: transparent;
+  border-radius: 5px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.setsreps-input {
+  margin-left: 5px;
+  width: auto;
+  margin-right: 5px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.sets-input input {
+  height: 25px;
+  border-radius: 10px;
+}
+
+.reps-input input {
+  height: 25px;
+  border-radius: 10px;
+}
+
+.sets-window-logo {
+  justify-self: center;
+}
+
+@media (max-width: 1400px) {
+  .routine-workout-collection-container {
+    grid-template-columns: 1fr;
+    margin-left: 345px;
+  }
+
+  .sets-window-display {
+    margin-left: 500px;
+  }
+}

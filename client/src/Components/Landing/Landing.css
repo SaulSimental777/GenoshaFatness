@@ -1,0 +1,111 @@
+.landing-container {
+  align-items: center;
+}
+
+.top-logo {
+  display: flex;
+  margin-top: 50px;
+  gap: 15px;
+  font-size: 20px;
+  margin-left: 250px;
+}
+
+.middle-logo {
+  display: flex;
+}
+
+.middle-logo img {
+  height: 550px;
+  margin-top: 25px;
+}
+
+.hero-container {
+  margin-top: 150px;
+  margin-left: 250px;
+}
+
+.hero-container h1 {
+  font-size: 75px;
+  max-width: 10em;
+}
+
+.hero-container p {
+  margin-top: 25px;
+  font-size: 25px;
+  max-width: 25em;
+}
+
+.hero-container button {
+  height: 50px;
+  width: 175px;
+  background-color: #0099ff;
+  border-radius: 15px;
+  border-color: transparent;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 25px;
+}
+
+.btn-options {
+  gap: 25px;
+  display: flex;
+}
+
+@media (max-width: 1400px) {
+  .landing-container {
+    align-items: center;
+  }
+
+  .top-logo {
+    display: flex;
+    margin-top: 50px;
+    gap: 15px;
+    font-size: 20px;
+    margin-left: 50px;
+  }
+
+  .middle-logo {
+    display: flex;
+  }
+
+  .middle-logo img {
+    height: 400px;
+    margin-top: 25px;
+  }
+
+  .hero-container {
+    margin-top: 100px;
+    margin-left: 50px;
+  }
+
+  .hero-container h1 {
+    font-size: 65px;
+    max-width: 10em;
+  }
+
+  .hero-container p {
+    margin-top: 25px;
+    font-size: 20px;
+    max-width: 25em;
+  }
+
+  .hero-container button {
+    height: 50px;
+    width: 175px;
+    background-color: #0099ff;
+    border-radius: 15px;
+    border-color: transparent;
+    color: white;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 25px;
+  }
+
+  .btn-options {
+    gap: 25px;
+    display: flex;
+  }
+}

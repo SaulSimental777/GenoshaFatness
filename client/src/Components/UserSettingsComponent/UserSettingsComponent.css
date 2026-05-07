@@ -1,0 +1,82 @@
+.user-settings-background{
+    margin: auto;
+    background-color: white;
+    width: fit-content;
+    height: fit-content;
+    padding: 20px 20px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+    margin-left: 450px;
+}
+
+.first-row{
+    display: flex;
+    gap: 10px;
+    margin-top: 20px
+}
+
+.second-row{
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.third-row{
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    gap: 20px;
+}
+
+.select-row select{
+    width: 300px;
+    height: 35px;
+    border-radius: 10px;
+    border: 1px solid #c9c9c9;
+    font-family: oswald;
+}
+
+.input-row input{
+    width: 300px;
+    height: 35px;
+    border-radius: 10px;
+    border: 1px solid #c9c9c9;
+    font-family: oswald;
+}
+
+.marker{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: fit-content;
+    background-color: #bfe3fc;
+    border-radius: 5px;
+    color: #002944;
+    padding: 5px 5px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    
+}
+
+.button-row{
+    margin-top: 30px;
+    width: fit-content;
+    justify-self: center;
+
+}
+
+.button-row button{
+    width: 500px;
+    height: 35px;
+    cursor: pointer;
+    background-color: #0099ff;
+    color: white;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    border-radius: 10px;
+    border-color: transparent;
+
+}
+
+.button-row button:hover{
+    transform: scale(1.02);
+    transition: 0.6s;
+  }

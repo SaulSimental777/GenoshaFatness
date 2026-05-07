@@ -1,0 +1,137 @@
+.videos-grid{
+    width: max-content;
+    height: max-content;
+    margin-top: 20px;
+}
+
+.video-card{
+    display: flex;
+    width: 800px;
+    border-radius: 25px;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
+    height: 175px;
+
+
+}
+
+.video-card:hover{
+    transform: scale(1.05);
+    transition: 0.6s;
+}
+
+.video-card-thumbnail{
+    width: max-content;
+    margin-right: 10px;
+    margin-top: 25px;
+    margin-left: 20px;
+}
+
+.video-card-thumbnail img{
+    height: 130px;
+    border-radius: 20px;
+}
+
+.video-card-specs{
+
+    margin: auto;
+    padding-right: 10px;
+    color: black;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: 10px;
+    margin: auto;
+}
+
+.video-card-specs h4{
+    color: gray
+}
+
+.video-card-logo{
+
+    margin: auto;
+    margin-right: 10px;
+}
+
+.routines-list-display {
+    position: fixed;
+    inset: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+    opacity: 0;
+    transition: 0.3s ease-in-out all;
+    visibility: hidden;
+    margin: auto;
+    background-color: white;
+    width: 500px;
+    height: 650px;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow-y: auto;
+    margin-left: 775px;
+  }
+  
+  .show-list {
+    z-index: 99;
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .routine-list-display-format {
+    background-color: white;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
+    width: 450px;
+    margin: auto;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .routine-display-cancel-button {
+    background-color: #0099ff;
+    margin: auto;
+    width: fit-content;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+  }
+  
+  .routine-display-cancel-button:hover {
+    transform: scale(1.02);
+    transition: 0.6s;
+  }
+  
+  .routine-display-cancel-button button {
+    background-color: #0099ff;
+    height: 45px;
+    width: 450px;
+    border-color: transparent;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .routine-display-add-button {
+    background-color: #0099ff;
+    height: fit-content;
+    margin-right: 5px;
+    margin-top: 75px;
+    width: fit-content;
+    border-radius: 10px;
+  }
+  
+  .routine-display-add-button:hover {
+    transform: scale(1.02);
+    transition: 0.6s;
+  }
+  
+  .routine-display-add-button button {
+    background-color: #0099ff;
+    color: white;
+    border-radius: 10px;
+    border-color: transparent;
+    width: 150px;
+    height: 25px;
+    cursor: pointer;
+  }
+  
+

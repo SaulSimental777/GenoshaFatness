@@ -1,0 +1,115 @@
+.news-background{
+    margin: auto;
+    background: white;
+    width: 1375px;
+    border-radius: 25px;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
+    height: max-content;
+    margin-left: 275px;
+    display: grid;
+    gap: 20px;
+    padding-bottom: 20px;
+}
+
+.news-background-map{
+    background: white;
+    width: 1375px;
+    height: max-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    padding-bottom: 20px;
+}
+
+.news-container{
+    background: white;
+    width: max-content;
+    height: max-content;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    margin: auto;
+    margin-top: 20px;
+    padding-bottom: 10px;
+
+    
+}
+
+.news-container-image{
+    width: 255px;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
+
+}
+
+.news-container-image img{
+    width: 415px;
+    margin: auto;
+    border-radius: 15px 15px 0px 0px;
+}
+
+.news-container-specs{
+    width: 385px;
+    font-size: 13px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+ 
+}
+
+.news-container-specs h4{
+    margin-top: 10px;
+}
+
+.news-container-description{
+    width: 395px;
+    font-size: 13px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    color: rgb(97, 97, 97);
+    
+}
+
+.news-background-header{
+    margin: auto;
+
+
+}
+
+.news-background-header-logo{
+    width: max-content;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.news-background-header-top{
+    margin: auto;
+    width: max-content;
+}
+
+.news-background-header-bottom{
+    width: 550px;
+    margin-top: 10px;
+    text-align: center;
+    color: gray;
+}
+
+.news-container-button{
+    width: max-content;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.news-container-button:hover{
+    transform: scale(1.05);
+    transition: 0.6s;
+}
+
+.news-container-button button{
+    width: 375px;
+    color: white;
+    background-color: #0099ff;
+    border-color: transparent;
+    height: 35px;
+    border-radius: 20px;
+    cursor: pointer;
+}

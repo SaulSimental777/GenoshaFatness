@@ -1,0 +1,299 @@
+.food-display-container {
+  background-color: white;
+  margin: auto;
+  width: fit-content;
+  height: 700px;
+  margin-left: 300px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px 1px rgb(0, 0, 0, 0.1);
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.food-display-left{
+  width: 688px;
+}
+
+.food-display-left-bottom{
+  margin-left: 30px;
+  margin-top: 20px;
+}
+
+.food-display-left-bottom button{
+  color: white;
+  background: #0099ff;
+  border-color: transparent;
+  border-radius: 10px;
+  width: 555px;
+  height: 50px;
+  margin-top: 50px;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.food-display-left-bottom button:hover{
+  transform: scale(1.02);
+  transition: 0.6s;
+}
+
+
+.food-display-right{
+  width: fit-content;
+  padding-right: 40px;
+  height: fit-content;
+  margin-top: 30px;
+}
+
+.calories{
+
+  background: #daeefc;
+  width: fit-content;
+  padding: 10px 200px;
+  border-radius: 15px;
+  margin-top: 30px;
+  margin-left: 80px;
+  color: #0070bb;
+  justify-items: center;
+  
+}
+
+
+.macros{
+  display: flex;
+  margin-top: 20px;
+  margin-left: 80px;
+  width: 455px;
+
+}
+
+.proteins{
+  background-color: rgb(209, 250, 209);
+  width: 145px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  color:  rgb(0, 139, 0);
+  justify-items: center;
+  border-radius: 10px;
+}
+
+.carbs{
+  background-color: rgb(255, 227, 176);
+  width: 145px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  color:  rgb(163, 106, 0);
+  justify-items: center;
+  border-radius: 10px;
+  margin-left: 7px;
+}
+
+.fats{
+  background-color: rgb(254, 255, 176);
+  width: 145px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  color:  rgb(143, 140, 0);
+  justify-items: center;
+  border-radius: 10px;
+  margin-left: 7px;
+}
+
+.food-display-left-top img{
+  width: 550px;
+  margin-left: 30px;
+  margin-top: 30px;
+  border-radius: 15px;
+}
+
+.food-display-bottom-right{
+  margin-top: 50px;
+  margin-left: 80px;
+}
+
+.nutri-facts-header{
+  background-color: #0099ff;
+  margin-left: 80px;
+  width: 455px;
+  height: 75px;
+  margin-top: 30px;
+  border-radius: 10px 10px 0px 0px;
+  
+}
+
+.barbell-icon{
+  width: fit-content;
+  justify-self: center;
+  padding-top: 10px;
+}
+
+
+.nutri-facts-container{
+  display: flex;
+  width: 455px;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 17px
+}
+
+.nutri-facts-icon{
+  display: flex;
+  gap: 5px;
+}
+
+.nutri-icon-satfat{
+  background-color: #ffc9e8;
+  color: #790044;
+  border-radius: 30px;
+  width: fit-content;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.nutri-icon-tranfat{
+  background-color: #eed0ff;
+  color: #4c0079;
+  border-radius: 30px;
+  width: fit-content;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.nutri-icon-sodium{
+  background-color: #cacaca;
+  color: rgb(97, 97, 97);
+  border-radius: 30px;
+  width: fit-content;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.nutri-icon-sugar{
+  background-color: #cad6ff;
+  color: #00165f;
+  border-radius: 30px;
+  width: fit-content;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.nutri-icon-chol{
+  background-color: #caffca;
+  color: #005c00;
+  border-radius: 30px;
+  width: fit-content;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.nutri-icon-fib{
+  background-color: #ffdfca;
+  color: #572300;
+  border-radius: 30px;
+  width: fit-content;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.recipes-list-display {
+  position: fixed;
+  inset: 0;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+  opacity: 0;
+  transition: 0.3s ease-in-out all;
+  visibility: hidden;
+  margin: auto;
+  background-color: white;
+  width: 500px;
+  height: 650px;
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow-y: auto;
+  margin-left: 775px;
+}
+
+.show-list {
+  z-index: 99;
+  opacity: 1;
+  visibility: visible;
+}
+
+.recipe-list-display-format {
+  background-color: white;
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
+  width: 450px;
+  margin: auto;
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.recipe-display-cancel-button {
+  background-color: #0099ff;
+  margin: auto;
+  width: fit-content;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-radius: 10px;
+}
+
+.recipe-display-cancel-button:hover {
+  transform: scale(1.02);
+  transition: 0.6s;
+}
+
+.recipe-display-cancel-button button {
+  background-color: #0099ff;
+  height: 45px;
+  width: 450px;
+  border-color: transparent;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.recipe-display-add-button {
+  background-color: #0099ff;
+  height: fit-content;
+  margin-right: 5px;
+  margin-top: 75px;
+  width: fit-content;
+  border-radius: 10px;
+}
+
+.recipe-display-add-button:hover {
+  transform: scale(1.02);
+  transition: 0.6s;
+}
+
+.recipe-display-add-button button {
+  background-color: #0099ff;
+  color: white;
+  border-radius: 10px;
+  border-color: transparent;
+  width: 150px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.food-display-right hr{
+  width: 455px;
+  margin-left: 85px;
+  margin-top: 30px;
+  height: 30px;
+  background-color: #0099ff;
+  border-color: transparent;
+  border-radius: 0px 0px 10px 10px;
+}
+
+
+
+
+
+
+
+
+

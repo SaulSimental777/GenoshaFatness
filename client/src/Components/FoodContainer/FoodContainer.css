@@ -1,0 +1,33 @@
+.food-container {
+  margin: auto;
+  margin-left: 100px;
+  display: grid;
+  background-color: white;
+  width: 375px;
+  height: 150px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+.food-container-top {
+  margin: auto;
+}
+
+.food-container-bottom {
+  margin: auto;
+}
+
+.food-container-corner {
+  margin: auto;
+  width: fit-content;
+  height: fit-content;
+}
+
+.food-container-top img {
+  width: 150px;
+}
+
+.food-container:hover {
+  transform: scale(1.05);
+  transition: 0.6s;
+}

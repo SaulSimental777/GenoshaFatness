@@ -1,0 +1,76 @@
+.admin-food-list-container {
+    padding: 20px 20px 20px 180px;
+}
+
+.admin-food-list-header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.admin-food-search {
+    display: flex;
+    gap: 10px;
+}
+
+.admin-food-search input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex: 1;
+}
+
+.admin-food-search button {
+    padding: 8px 16px;
+    background-color: #0099ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.admin-food-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.admin-food-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    background: white;
+}
+
+.admin-food-item-info {
+    display: flex;
+    align-items: center;
+    gap: 150px;
+}
+
+.admin-food-item-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.edit-btn {
+    padding: 8px 16px;
+    background-color: #0099ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-btn {
+    padding: 8px 16px;
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

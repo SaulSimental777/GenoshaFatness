@@ -1,0 +1,201 @@
+.routine-list {
+  margin: auto;
+}
+
+.routine-list-container {
+  margin: auto;
+  background-color: white;
+  width: 1250px;
+  height: 550px;
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin-left: 325px;
+  overflow-y: auto;
+}
+
+.routine-popup {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+  opacity: 0;
+  transition: 0.3s ease-in-out all;
+  visibility: hidden;
+}
+
+.popup-content {
+  background-color: white;
+  width: 450px;
+  height: fit-content;
+  border-radius: 10px;
+  margin-left: 150px;
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+.show-popup {
+  z-index: 99;
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup-logo {
+  margin: auto;
+  width: fit-content;
+}
+
+.popup-field input {
+  width: 95%;
+  height: 30px;
+  border-radius: 10px;
+  border-color: rgb(185, 184, 184);
+}
+
+.popup-field {
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+
+.popup-content button {
+  background-color: #0099ff;
+  color: white;
+  margin-left: 10px;
+  width: 95%;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  height: 35px;
+  border-color: transparent;
+  cursor: pointer;
+}
+
+.popup-content button:hover {
+  transform: scale(1.02);
+  transition: 0.6s;
+}
+
+.routine-list-format {
+  height: 100px;
+  margin-left: 10px;
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+
+.routine-list-format:hover {
+  transform: scale(1.01);
+  transition: 0.6s;
+}
+
+.routine-add {
+  width: fit-content;
+  margin-top: 20px;
+}
+
+.routine-add:hover {
+  transform: scale(1.05);
+  transition: 0.6s;
+  cursor: pointer;
+}
+
+.routine-share {
+  width: fit-content;
+  margin-top: 20px;
+}
+
+.routine-share:hover {
+  transform: scale(1.05);
+  transition: 0.6s;
+  cursor: pointer;
+}
+
+.routine-addshare {
+  display: flex;
+  width: 1250px;
+  margin-left: 325px;
+  justify-content: space-between;
+}
+
+.routine-sharepopup {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+  opacity: 0;
+  transition: 0.3s ease-in-out all;
+  visibility: hidden;
+}
+
+.share-content {
+  background-color: white;
+  width: 450px;
+  height: fit-content;
+  border-radius: 10px;
+  margin-left: 150px;
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+.show-share {
+  z-index: 99;
+  opacity: 1;
+  visibility: visible;
+}
+
+.share-logo {
+  margin: auto;
+  width: fit-content;
+}
+
+.share-field input {
+  width: 95%;
+  height: 30px;
+  border-radius: 10px;
+  border-color: rgb(185, 184, 184);
+}
+
+.share-field {
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+
+.share-content button {
+  background-color: red;
+  color: white;
+  margin-left: 10px;
+  width: 95%;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  height: 35px;
+  border-color: transparent;
+  cursor: pointer;
+}
+
+.share-content button:hover {
+  transform: scale(1.02);
+  transition: 0.6s;
+}
+
+@media (max-width: 1400px) {
+  .routine-list {
+    margin: auto;
+  }
+
+  .routine-list-container {
+    margin: auto;
+    background-color: white;
+    width: 800px;
+    height: 550px;
+    margin-left: 325px;
+    overflow-y: auto;
+  }
+
+  .routine-addshare {
+    width: 800px;
+  }
+}

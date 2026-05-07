@@ -1,0 +1,29 @@
+.container {
+  margin: auto;
+  margin-left: 150px;
+  display: flex;
+  background-color: white;
+  height: 125px;
+  width: 600px;
+  height: 250px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+.container-left img {
+  height: 250px;
+}
+
+.container-right {
+  margin: auto;
+}
+
+.container-right h3 {
+  margin-top: 10px;
+  color: gray;
+}
+
+.container:hover {
+  transform: scale(1.05);
+  transition: 0.6s;
+}

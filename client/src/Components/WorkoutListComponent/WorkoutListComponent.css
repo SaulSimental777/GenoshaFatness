@@ -1,0 +1,85 @@
+.workout-list-background{
+  margin: auto;
+  margin-left: 170px;
+  width: max-content;
+
+}
+
+.workout-list-header{
+  margin: auto;
+  width: 1350px;
+  height: max-content;
+  background: white;
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  display: grid;
+  margin-left: 150px;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+.workout-list-presentation{
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+.workout-presentation-logo{
+  width: max-content;
+  margin: auto;
+}
+
+.workout-presentation-title{
+  width: max-content;
+  margin: auto;
+}
+
+.workout-list-searchbars{
+  margin-right: 30px
+}
+.workout-list-searchbars input{
+   width: max-content;
+   margin-left: 25px;
+   width: 525px;
+   height: 35px;
+   border-radius: 10px;
+   border-color: white;
+   box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+.workout-list-button{
+  width:  900px;
+  margin: auto;
+  margin-top: 20px;
+  gap: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.workout-list-button button{
+  width: 350px;
+  height: 35px;
+  border-radius: 10px;
+  background-color: #0099ff;
+  color: white;
+  border-color: transparent;
+  cursor: pointer;
+}
+
+
+.workout-list {
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 50px;
+  margin-top: 35px;
+}
+
+
+
+@media (max-width: 1400px) {
+  .workout-list {
+    grid-template-columns: 1fr;
+    margin: 20px 250px;
+  }
+}

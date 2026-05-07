@@ -1,0 +1,80 @@
+.recipe-collection {
+  background-color: white;
+  margin: auto;
+  width: 500px;
+  display: flex;
+  height: fit-content;
+  justify-content: space-between;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px 1px rgb(0, 0, 0, 0.1);
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 15px;
+}
+
+.recipecollection-left img {
+  height: 100px;
+}
+
+.recipecollection-data {
+  margin-top: 10px;
+  margin-left: 5px;
+  width: fit-content;
+  margin-right: 10px;
+  display: grid;
+  gap: 5px;
+}
+
+.recipecollection-data p {
+  text-align: justify;
+  color: rgb(114, 113, 113);
+}
+
+.recipecollection-options {
+  margin-left: 18px;
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  width: fit-content;
+  margin-bottom: 10px;
+}
+
+.recipecollection-options button {
+  background-color: #0099ff;
+  border-radius: 10px;
+  border-color: transparent;
+  color: white;
+  cursor: pointer;
+  height: 30px;
+  width: 225px;
+}
+
+.ingredient-total {
+  display: grid;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.ingredient-total-row {
+  display: flex;
+  gap: 55px;
+}
+
+.ingredient-macro {
+  background-color: #747474;
+  width: 200px;
+  height: 50px;
+  margin-top: 10px;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+}
+
+.ingredient-macro h3 {
+  margin-top: 5px;
+}
+
+.recipecollection-name {
+  margin-top: 5px;
+  font-size: 18px;
+  margin-left: 5px;
+}

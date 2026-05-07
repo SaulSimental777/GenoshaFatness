@@ -1,0 +1,80 @@
+
+
+.food-list-background{
+  margin: auto;
+  margin-left: 170px;
+  width: max-content;
+
+}
+
+.food-list-header{
+  margin: auto;
+  width: 1350px;
+  height: max-content;
+  background: white;
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  display: grid;
+  margin-left: 150px;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.food-list-presentation{
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+.food-list-presentation-logo{
+  width: max-content;
+  margin: auto;
+}
+
+.food-list-presentation-title{
+  width: max-content;
+  margin: auto;
+}
+
+.food-list-searchbars{
+  margin-right: 30px
+}
+.food-list-searchbars input{
+   width: max-content;
+   margin-left: 25px;
+   width: 625px;
+   height: 35px;
+   border-radius: 10px;
+   border-color: white;
+   box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+.food-list-button{
+  width: max-content;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.food-list-button button{
+  width: 350px;
+  height: 35px;
+  border-radius: 10px;
+  background-color: #0099ff;
+  color: white;
+  border-color: transparent;
+  cursor: pointer;
+}
+
+.food-list {
+  margin: 20px 65px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 30px;
+}
+
+@media (max-width: 1400px) {
+  .food-list {
+    grid-template-columns: 1fr 1fr;
+    margin: 20px 195px;
+  }
+}
