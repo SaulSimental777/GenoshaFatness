@@ -1,38 +1,38 @@
-import OpenAI from 'openai';
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
 export const getChatResponse = async (req, res) => {
     const { message } = await req.body;
 
-    console.log(message)
+    console.log(message);
 
-      const openai = new OpenAI({
-          apiKey: process.env.OPENAI_API_KEY || '',
-     });
+    // Inicializar Gemini con tu API Key
+    const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
 
-     const stream = await openai.chat.completions.create({
-        model: "gpt-4o-mini",
-        messages: [{ role: "user",
-              content: 'Eres una instructora virtual llamada sigrun para una aplicacion web basada en rutinas de ejercicios y recetas saludables'
-             + 'contestaras cualquier pregunta respecto al tema de ejercicios que trabajan ciertos grupos musculares,' 
-             + 'la mejor forma de ejercitarse, alimentos ricos en calorias y macronutrientes asi como recomendar rutinas de ejercicios,' 
-              + 'el idioma que hablaras sera el español' 
-              + 'No hace falta que saludes despues del segundo mensaje'
-              + message
+    //Configurar el modelo con sus instrucciones de sistema
+    const model = genAI.getGenerativeModel({ 
+        model: "gemini-2.5-flash-lite", 
+        systemInstruction: "Eres una instructora virtual llamada Sigrun para una aplicación web basada en rutinas de ejercicios y recetas saludables. "
+                         + "Contestarás cualquier pregunta respecto al tema de ejercicios que trabajan ciertos grupos musculares, "
+                         + "la mejor forma de ejercitarse, alimentos ricos en calorías y macronutrientes, así como recomendar rutinas de ejercicios. "
+                         + "El idioma que hablarás será el español. No hace falta que saludes después del segundo mensaje."
+    });
 
-             }],
-        stream: true,
+    try {
+        
+        const result = await model.generateContentStream(message);
 
-     });
+        let fullResponse = '';
 
-     let fullResponse = ''
+        
+        for await (const chunk of result.stream) {
+            const chunkText = chunk.text();
+            fullResponse += chunkText;
+        }
 
-     for await (const chunk of stream) {
-         fullResponse += chunk.choices[0]?.delta?.content || "";
-     }
+        res.status(200).json({ message: fullResponse });
 
-     res.status(200).json({message: fullResponse})
-
-
-
-
+    } catch (error) {
+        console.error("Error con Gemini:", error);
+        res.status(500).json({ error: "Hubo un fallo al procesar la respuesta." });
+    }
 };
