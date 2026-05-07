@@ -6,7 +6,7 @@ import {
     updateFood,
     deleteFood
 } from '../Controllers/foodControllers.js'
-import { validateFoodInput } from '../Middleware/validationMiddleware.js'
+import { validateFoodInput, validateFoodUpdateInput } from '../Middleware/validationMiddleware.js'
 import { authorizePermissions, authenticateUser} from '../Middleware/authMiddleware.js'
 import upload from '../Middleware/multerMiddleware.js'
 import { checkImageUpload } from '../Middleware/multerMiddleware.js'
@@ -18,7 +18,7 @@ router.post('/addfood', upload.single('image'), checkImageUpload, validateFoodIn
 router
     .route('/:id')
     .get(getFood)
-    .patch(upload.single('image'), validateFoodInput, authenticateUser, authorizePermissions('admin'), updateFood)
+    .patch(upload.single('image'), validateFoodUpdateInput, authenticateUser, authorizePermissions('admin'), updateFood)
     .delete(authenticateUser, authorizePermissions('admin'), deleteFood)
 
 export default router

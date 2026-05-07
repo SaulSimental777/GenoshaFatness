@@ -7,7 +7,7 @@ import {
     deleteExercise,
     getRecommendedExercises
 } from '../Controllers/exerciseControllers.js'
-import { validateExerciseInput } from '../Middleware/validationMiddleware.js'
+import { validateExerciseInput, validateExerciseUpdateInput } from '../Middleware/validationMiddleware.js'
 import { authorizePermissions, authenticateUser} from '../Middleware/authMiddleware.js'
 import upload from '../Middleware/multerMiddleware.js'
 import { checkImageUpload } from '../Middleware/multerMiddleware.js'
@@ -20,7 +20,7 @@ router.post('/addexercise', upload.single('image'), checkImageUpload, validateEx
 router
     .route('/:id')
     .get(getExercise)
-    .patch(upload.single('image'), validateExerciseInput, authenticateUser, authorizePermissions('admin'), updateExercise)
+    .patch(upload.single('image'), validateExerciseUpdateInput, authenticateUser, authorizePermissions('admin'), updateExercise)
     .delete(authenticateUser, authorizePermissions('admin'), deleteExercise)
 
 export default router

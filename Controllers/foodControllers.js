@@ -29,7 +29,7 @@ export const updateFood = async (req, res) => {
         new:true
     })
 
-    res.status(StatusCodes.OK),json({ msg: 'food modified: ', food: updatedFood })
+    res.status(StatusCodes.OK).json({ msg: 'food modified: ', food: updatedFood })
 }
 
 export const deleteFood = async (req, res) => {

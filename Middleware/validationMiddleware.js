@@ -93,4 +93,19 @@ export const validateUpdateUserInput = withValidationErrors([
     
 ])
 
+export const validateExerciseUpdateInput = withValidationErrors([
+    body('name').notEmpty().withMessage('Name of the exercise is required'),
+    body('muscleGroup').notEmpty().withMessage('Muscle group is required'),
+    body('description').notEmpty().withMessage('Description of the exercise is required')
+    // no image required for updates
+]);
 
+export const validateFoodUpdateInput = withValidationErrors([
+    body('name').notEmpty().withMessage('Name of the food is required'),
+    body('calories').notEmpty().withMessage('Calories per portion are required'),
+    body('protein').notEmpty().withMessage('Proteins per portion are required'),
+    body('carbs').notEmpty().withMessage('Carbs per portion are required'),
+    body('fats').notEmpty().withMessage('Fats per portion are required'),
+    body('portionSize').notEmpty().withMessage('Portion size is required'),
+    // no image required for updates
+]);
