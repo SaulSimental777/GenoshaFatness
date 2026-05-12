@@ -95,18 +95,18 @@ const RoutineDisplayComponent = () => {
         {one_routine.exercises.map((item, i) => (
             <div key={i} className="routine-collection">
             <div className="routinecollection-left">
-                <img onClick={window.scrollTo(0, 0)} src={`http://localhost:5101/${item.image.replace("public\\uploads\\", "")}`} alt="" />
+                <img onClick={window.scrollTo(0, 0)} src={`${import.meta.env.VITE_API_URL}/${item.image.replace("public\\uploads\\", "").replace("public/uploads/", "")}`} alt="" />
             </div>
             <div className="routinecollection-right">
                 <div className="routinecollection-data">
                     <h2>{item.name}</h2>
-                    <h3>Muscle Group: {item.muscleGroup}</h3>
+                    <h3>Grupo muscular: {item.muscleGroup}</h3>
                     <p>{item.description}</p>
                     <h3>{item.sets} Sets X {item.reps} Reps</h3>
                 </div>
                 <div className="routinecollection-options">
-                    <button onClick={() => toggleWindow(item._id)}>EDIT</button>
-                    <button onClick={() => removeWorkout(item._id)}>REMOVE</button>
+                    <button onClick={() => toggleWindow(item._id)}>EDITAR</button>
+                    <button onClick={() => removeWorkout(item._id)}>ELIMINAR</button>
                 </div>
             </div>
             <div className={workoutUpdate === item._id ? 'sets-window-display show-window': 'sets-window-display'}>

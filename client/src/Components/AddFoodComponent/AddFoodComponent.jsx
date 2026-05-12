@@ -50,11 +50,11 @@ const AddFoodComponent = () => {
             </div>
             <div className="admin-add-food-data-container">
                 <div className="admin-add-food-itemfield">
-                    <p>Grasa</p>
+                    <p>Grasas</p>
                     <input type="number" name='fats' />
                 </div>
                 <div className="admin-add-food-itemfield">
-                    <p>Carbohidratos</p>
+                    <p>Carbohídratos</p>
                     <input type="number" name='carbs' step=".01" />
                 </div>
             </div>
@@ -70,7 +70,7 @@ const AddFoodComponent = () => {
             </div>
             <div className="admin-add-food-data-container">
                 <div className="admin-add-food-itemfield">
-                    <p>Azucares</p>
+                    <p>Azúcares</p>
                     <input type="number" name='sugars' step=".01" />
                 </div>
                 <div className="admin-add-food-itemfield">

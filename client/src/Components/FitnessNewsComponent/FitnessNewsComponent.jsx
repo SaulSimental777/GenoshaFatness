@@ -47,7 +47,7 @@ const FitnessNewsComponent = () => {
                         </div>
                         <a href={article.url}>
                             <div className="news-container-button">
-                                <button>Leer mas</button>
+                                <button>Leer más</button>
                             </div>
                         </a>
                     </div>

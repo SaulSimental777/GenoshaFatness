@@ -51,17 +51,17 @@ const EditFoodComponent = () => {
                         <input type="text" name='name' defaultValue={food.name} />
                     </div>
                     <div className="admin-add-food-itemfield">
-                        <p>Tamaño de la porcion (g)</p>
+                        <p>Tamaño de la porción (g)</p>
                         <input type="number" name='portionSize' defaultValue={food.portionSize} />
                     </div>
                 </div>
                 <div className="admin-add-food-data-container">
                     <div className="admin-add-food-itemfield">
-                        <p>Calorias</p>
+                        <p>Calorías</p>
                         <input type="number" name='calories' defaultValue={food.calories} />
                     </div>
                     <div className="admin-add-food-itemfield">
-                        <p>Proteinas</p>
+                        <p>Proteínas</p>
                         <input type="number" name='protein' defaultValue={food.protein} />
                     </div>
                 </div>
@@ -71,7 +71,7 @@ const EditFoodComponent = () => {
                         <input type="number" name='fats' defaultValue={food.fats} />
                     </div>
                     <div className="admin-add-food-itemfield">
-                        <p>Carbohidratos</p>
+                        <p>Carbohídratos</p>
                         <input type="number" name='carbs' step=".01" defaultValue={food.carbs} />
                     </div>
                 </div>
@@ -87,7 +87,7 @@ const EditFoodComponent = () => {
                 </div>
                 <div className="admin-add-food-data-container">
                     <div className="admin-add-food-itemfield">
-                        <p>Azucares</p>
+                        <p>Azúcares</p>
                         <input type="number" name='sugars' step=".01" defaultValue={food.sugars} />
                     </div>
                     <div className="admin-add-food-itemfield">
@@ -101,7 +101,7 @@ const EditFoodComponent = () => {
                         <input type="number" name='cholesterol' step=".01" defaultValue={food.cholesterol} />
                     </div>
                     <div className="admin-add-food-itemfield">
-                        <p>Fibra dietetica</p>
+                        <p>Fibra dietética</p>
                         <input type="number" name='dietaryFiber' step=".01" defaultValue={food.dietaryFiber} />
                     </div>
                 </div>

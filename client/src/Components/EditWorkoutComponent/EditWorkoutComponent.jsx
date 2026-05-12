@@ -48,16 +48,16 @@ const EditWorkoutComponent = () => {
             <div className="admin-add-workout-data">
                 <div className="admin-add-workout-data-container">
                     <div className="admin-add-workout-itemfield">
-                        <p>Name</p>
+                        <p>Nombre</p>
                         <input type="text" name='name' defaultValue={exercise.name} />
                     </div>
                     <div className="admin-add-workout-itemfield">
-                        <p>Muscle Group</p>
+                        <p>Grupo muscular</p>
                         <input type="text" name='muscleGroup' defaultValue={exercise.muscleGroup} />
                     </div>
                 </div>
                 <div className="admin-add-workout-description">
-                    <p>Description</p>
+                    <p>Descripción</p>
                     <textarea name='description' defaultValue={exercise.description} />
                 </div>
                 <div className="admin-add-workout-difficulty">
@@ -72,7 +72,7 @@ const EditWorkoutComponent = () => {
             <div className="admin-add-workout-image">
                 <label htmlFor="image-workout">
                     <div className="area-workout">
-                        <p>Image</p>
+                        <p>Imagen</p>
                         <input type="file" name='image' id='image-workout' accept='image/*'/>
                     </div>
                 </label>
