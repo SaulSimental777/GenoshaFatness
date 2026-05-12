@@ -63,7 +63,7 @@ const DailyLogPageComponent = () => {
         routineId: routineId,
         userId: user._id,
       });
-      toast.success('Routine Added');
+      toast.success('Rutina agregada');
       toggleListRoutines()
       fetchDailyLog();
     } catch (error) {
@@ -78,7 +78,7 @@ const DailyLogPageComponent = () => {
         recipeId: recipeId,
         userId: user._id,
       });
-      toast.success('Recipe Added');
+      toast.success('Receta agregada');
       fetchDailyLog();
       toggleListRecipes()
     } catch (error) {
@@ -95,7 +95,7 @@ const DailyLogPageComponent = () => {
         
       });
       console.log(response)
-      toast.success('Recipe Removed');
+      toast.success('Receta eliminada');
       fetchDailyLog();
     } catch (error) {
       console.log(error)
@@ -112,7 +112,7 @@ const DailyLogPageComponent = () => {
         
       });
       console.log(response)
-      toast.success('Routine Removed');
+      toast.success('Rutina eliminada');
       fetchDailyLog();
     } catch (error) {
       console.log(error)
@@ -324,7 +324,7 @@ const DailyLogPageComponent = () => {
                 <PiBarbellLight size={50} color="0099ff" />
               </div>
               <div className="routine-display-add-button">
-                <button onClick={() => addRoutine(routine._id)}>ADD</button>
+                <button onClick={() => addRoutine(routine._id)}>AGREGAR</button>
               </div>
             </div>
           ))
@@ -332,7 +332,7 @@ const DailyLogPageComponent = () => {
           <p>No hay rutinas disponibles</p>
         )}
         <div className="routine-display-cancel-button">
-          <button onClick={toggleListRoutines}>CANCEL</button>
+          <button onClick={toggleListRoutines}>CANCELAR</button>
         </div>
       </div>
       <div className={showRecipes ? 'routines-list-display show-list' : 'routines-list-display'}>
@@ -345,7 +345,7 @@ const DailyLogPageComponent = () => {
                 <PiBarbellLight size={50} color="0099ff" />
               </div>
               <div className="routine-display-add-button">
-                <button onClick={() => addRecipe(recipe._id)}>ADD</button>
+                <button onClick={() => addRecipe(recipe._id)}>AGREGAR</button>
               </div>
             </div>
           ))
@@ -353,7 +353,7 @@ const DailyLogPageComponent = () => {
           <p>No hay recetas disponibles</p>
         )}
         <div className="routine-display-cancel-button">
-          <button onClick={toggleListRecipes}>CANCEL</button>
+          <button onClick={toggleListRecipes}>CANCELAR</button>
         </div>
       </div>
     </div>

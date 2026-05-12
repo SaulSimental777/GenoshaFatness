@@ -151,8 +151,8 @@ const RecipeDisplayComponent = () => {
                         <button onClick={() => toggleWindow(item._id)}>SALIR</button></div>
                       </div>
                   <div className="recipecollection-options">
-                      <button onClick={() => toggleWindow(item._id)}>PORTION</button>
-                      <button onClick={() => removeFood(item._id)}>REMOVE</button>
+                      <button onClick={() => toggleWindow(item._id)}>PORCION</button>
+                      <button onClick={() => removeFood(item._id)}>REMOVER</button>
                   </div>
               </div>
         </div>

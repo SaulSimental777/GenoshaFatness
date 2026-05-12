@@ -27,10 +27,9 @@ const EditWorkoutComponent = () => {
         e.preventDefault()
         setIsSubmitting(true)
         const formData = new FormData(e.target)
-        const data = Object.fromEntries(formData)
         try {
-            await customFetch.patch(`/exercises/${workoutId}`, data)
-            toast.success('Exercise updated!')
+            await customFetch.patch(`/exercises/${workoutId}`, formData)
+            toast.success('Ejercicio actualizado!')
             navigate('/home/admin/all-workout')
         } catch (error) {
             toast.error(error?.response?.data?.msg)
@@ -42,7 +41,7 @@ const EditWorkoutComponent = () => {
     if (!exercise) return <div>Cargando...</div>
 
     return (
-        <form onSubmit={handleSubmit} className="admin-add-workout-container">
+        <form onSubmit={handleSubmit} className="admin-add-workout-container" encType='multipart/form-data'>
             <div className="admin-add-workout-logo">
                 <PiBarbellLight size={75} color='#0099ff'/>
             </div>
@@ -69,6 +68,14 @@ const EditWorkoutComponent = () => {
                         ))}
                     </select>
                 </div>
+            </div>
+            <div className="admin-add-workout-image">
+                <label htmlFor="image-workout">
+                    <div className="area-workout">
+                        <p>Image</p>
+                        <input type="file" name='image' id='image-workout' accept='image/*'/>
+                    </div>
+                </label>
             </div>
             <div className="admin-add-workout-button">
                 <button type='submit' disabled={isSubmitting}>

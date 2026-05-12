@@ -12,6 +12,12 @@ const storage = multer.diskStorage({
   
   export default upload;
 
+  export const optionalImageUpload = (req, res, next) => {
+    if (req.file) {
+        req.body.image = req.file.path;
+    }
+    next();
+};
 
   export const checkImageUpload = (req, res, next) => {
     if (!req.file) {
@@ -19,4 +25,7 @@ const storage = multer.diskStorage({
     }
     req.body.image = req.file.path;
     next();
+    
 };
+
+

@@ -49,7 +49,7 @@ const RoutineDisplayComponent = () => {
       }
     
       if (!one_routine) {
-        return <div>Routine not found</div>;
+        return <div>Rutina no encontrada</div>;
       }
 
       const removeWorkout= async (workoutId) => {

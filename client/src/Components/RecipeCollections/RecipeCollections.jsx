@@ -61,8 +61,8 @@ const RecipeCollections = (props) => {
       </div>
         </div>
         <div className="recipecollection-options">
-            <button>PORTION</button>
-            <button onClick={() => removeFood(props.id)}>REMOVE</button>
+            <button>PORCION</button>
+            <button onClick={() => removeFood(props.id)}>REMOVER</button>
         </div>
     </div>
 </div>

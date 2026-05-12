@@ -44,7 +44,7 @@ const WorkoutDisplayComponent = () => {
     }, []);
 
     if (isLoading) return <div><CircleLoader size={150} color="#0099ff" /></div>;
-    if (!exercise) return <div>Workout not found</div>;
+    if (!exercise) return <div>Ejercicio no encontrado</div>;
 
     const addToRoutine = async (routineId) => {
         try {
@@ -52,7 +52,7 @@ const WorkoutDisplayComponent = () => {
                 routineId: routineId,
                 exerciseId: workoutId
             });
-            toast.success('Workout Added')
+            toast.success('Ejercicio agregado a la rutina')
         } catch (error) {
             toast.error(error?.response?.data?.msg)
         }
@@ -71,7 +71,7 @@ const WorkoutDisplayComponent = () => {
                     <button onClick={toggleList}>Agregar a una rutina</button>
                 </div>
                 <div className="workout-description">
-                    <h3>Descripcion</h3>
+                    <h3>Descripción</h3>
                     <p>{exercise.description}</p>
                 </div>
                 <div className="workout-musclegroup">
@@ -104,12 +104,12 @@ const WorkoutDisplayComponent = () => {
                             <PiBarbellLight size={50} color='0099ff'/>
                         </div>
                         <div className="routine-display-add-button">
-                            <button onClick={() => addToRoutine(routine._id)}>ADD</button>
+                            <button onClick={() => addToRoutine(routine._id)}>AGREGAR</button>
                         </div>
                     </div>
                 ))}
                 <div className="routine-display-cancel-button">
-                    <button onClick={toggleList}>CANCEL</button>
+                    <button onClick={toggleList}>CANCELAR</button>
                 </div>
             </div>
         </div>

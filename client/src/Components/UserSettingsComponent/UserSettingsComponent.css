@@ -80,3 +80,19 @@
     transform: scale(1.02);
     transition: 0.6s;
   }
+
+.logout-btn {
+    width: 500px;
+    height: 35px;
+    cursor: pointer;
+    background-color: #ff4444;
+    color: white;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    border-radius: 10px;
+    border-color: transparent;
+}
+
+.logout-btn:hover {
+    transform: scale(1.02);
+    transition: 0.6s;
+}

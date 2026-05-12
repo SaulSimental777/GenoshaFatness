@@ -15,15 +15,15 @@ const Landing = () => {
             <div className="hero-container">
                 <h1>Desbloquea tu potencial con Genosha</h1>
                 <p>
-                    Genosha Fitness es la mejor aplicacion fitness que te ayudara
-                    a alcanzar tus metas y vivir una vida mas saludable. Con funciones
-                    como seguimiento de calorias y planes de ejercicio tendras las
+                    Genosha Fitness es la mejor aplicación fitness que te ayudará
+                    a alcanzar tus metas y vivir una vida más saludable. Con funciones
+                    como seguimiento de calorías y planes de ejercicio tendrás las
                     herramientas que necesitas para llevar tus rutinas de ejercicio al
                     siguiente nivel.
                 </p>
                 <div className="btn-options">
                     <Link to='/register'><button>Registrarse</button></Link>
-                    <Link to='/login'><button>Iniciar Sesion</button></Link>
+                    <Link to='/login'><button>Iniciar Sesión</button></Link>
                 </div>
             </div>
             <div className="hero-image">

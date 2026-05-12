@@ -39,7 +39,7 @@ const RoutineListComponent = () => {
         const data = Object.fromEntries(formData)
         try {
             await customFetch.post('/routines/addroutine', data);
-            toast.success('Routine Created');
+            toast.success('Rutina creada');
             e.target.reset()
             togglePopup()
             fetchAllRoutine()
@@ -57,7 +57,7 @@ const RoutineListComponent = () => {
         const routineId = formData.get('routineId')
         try {
             await customFetch.post('routines/shareRoutine', { routineId });
-            toast.success('Routine Shared');
+            toast.success('Rutina compartida');
             e.target.reset()
             toggleShare()
             fetchAllRoutine()
@@ -100,14 +100,14 @@ const RoutineListComponent = () => {
                         <PiBarbellLight size={50} color='0099ff'/>
                     </div>
                     <div className="popup-field">
-                        <p>Routine name</p>
+                        <p>Nombre de la rutina</p>
                         <input type="text" name='name' required />
                     </div>
                     <button type='submit' disabled={isSubmitting} className="popup-accept">
-                        {isSubmitting ? 'Creating Routine...' : 'CREATE'}
+                        {isSubmitting ? 'Creando rutina...' : 'CREAR'}
                     </button>
                 </form>
-                <button onClick={togglePopup} className="popup-accept">CANCEL</button>
+                <button onClick={togglePopup} className="popup-accept">CANCELAR</button>
             </div>
         </div>
         <div className={showShare ? 'routine-sharepopup show-share' : 'routine-sharepopup'}>
@@ -117,14 +117,14 @@ const RoutineListComponent = () => {
                         <PiBarbellLight size={50} color='red'/>
                     </div>
                     <div className="share-field">
-                        <p>Routine share</p>
+                        <p>Compartir rutina</p>
                         <input type="text" name='routineId' required />
                     </div>
                     <button type='submit' disabled={isSubmitting} className="share-accept">
-                        {isSubmitting ? 'Getting Routine...' : 'GET'}
+                        {isSubmitting ? 'Obteniendo rutina...' : 'OBTENER'}
                     </button>
                 </form>
-                <button onClick={toggleShare} className="share-accept">CANCEL</button>
+                <button onClick={toggleShare} className="share-accept">CANCELAR</button>
             </div>
         </div>
     </div>

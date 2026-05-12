@@ -31,7 +31,7 @@ const RegisterComponent = () => {
         <form onSubmit={handleSubmit} className='form-container'>
             <div className="form-header">
                 <PiBarbellLight size={75} color='#0099ff'/>
-                <h1>Registrate</h1>
+                <h1>Regístrate</h1>
             </div>
             <div className="signup-fields">
                     <div className="signup-containers">
@@ -59,7 +59,7 @@ const RegisterComponent = () => {
                     <input name='birthDate' type="date" required />
                 </div>
                 <div className="signup-containers">
-                    <p>Genero</p>
+                    <p>Género</p>
                     <select name="gender">
                         {Object.values(GENDER_CATEGORY).map((itemValue) => (
                             <option key={itemValue} value={itemValue}>{itemValue}</option>
@@ -89,7 +89,7 @@ const RegisterComponent = () => {
             </div>
             <div className="signup-large-field">
                 <div className="signup-containers">
-                    <p>Nivel de actividad fisica</p>
+                    <p>Nivel de actividad física</p>
                     <select name="pal">
                         {Object.values(PAL_CATEGORY).map((itemValue) => (
                             <option key={itemValue} value={itemValue}>{itemValue}</option>
@@ -100,7 +100,7 @@ const RegisterComponent = () => {
             <button type='submit' disabled={isSubmitting}>
                 {isSubmitting ? 'Registrando...' : 'Registrarse'}
             </button>
-            <p className="signup-login">Ya tienes una cuenta? <Link to='/login'>Inicia sesion aqui</Link></p>
+            <p className="signup-login">¿Ya tienes una cuenta? <Link to='/login'>Inicia sesión aquí</Link></p>
         </form>
   )
 }

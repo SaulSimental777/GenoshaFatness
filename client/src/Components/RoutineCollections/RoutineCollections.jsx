@@ -18,8 +18,8 @@ const RoutineCollections = (props) => {
                 <p>{props.description}</p>
             </div>
             <div className="routinecollection-options">
-                <button>EDIT</button>
-                <button>REMOVE</button>
+                <button>EDITAR</button>
+                <button>REMOVER</button>
             </div>
         </div>
   </div>

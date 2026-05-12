@@ -31,10 +31,10 @@ const AdminWorkoutListComponent = () => {
     }, [])
 
     const handleDelete = async (exerciseId) => {
-        if (!window.confirm('Are you sure you want to delete this exercise?')) return
+        if (!window.confirm('¿Estás seguro de que quieres eliminar este ejercicio?')) return
         try {
             await customFetch.delete(`/exercises/${exerciseId}`)
-            toast.success('Exercise deleted')
+            toast.success('Ejercicio eliminado')
             fetchAllExercises()
         } catch (error) {
             toast.error(error?.response?.data?.msg)

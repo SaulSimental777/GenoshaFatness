@@ -60,7 +60,7 @@ const LoginComponent = () => {
         </div>
         <div className="login-fields">
             <div className="login-containers">
-                <p>Password</p>
+                <p>Contraseña</p>
                 <input name='password' type="password" placeholder='Password' />
             </div>
         </div>

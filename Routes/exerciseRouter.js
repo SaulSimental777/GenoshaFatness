@@ -11,6 +11,7 @@ import { validateExerciseInput, validateExerciseUpdateInput } from '../Middlewar
 import { authorizePermissions, authenticateUser} from '../Middleware/authMiddleware.js'
 import upload from '../Middleware/multerMiddleware.js'
 import { checkImageUpload } from '../Middleware/multerMiddleware.js'
+import { optionalImageUpload } from '../Middleware/multerMiddleware.js'
 
 const router = Router()
 
@@ -20,7 +21,7 @@ router.post('/addexercise', upload.single('image'), checkImageUpload, validateEx
 router
     .route('/:id')
     .get(getExercise)
-    .patch(upload.single('image'), validateExerciseUpdateInput, authenticateUser, authorizePermissions('admin'), updateExercise)
+    .patch(upload.single('image'), optionalImageUpload, validateExerciseUpdateInput, authenticateUser, authorizePermissions('admin'), updateExercise)
     .delete(authenticateUser, authorizePermissions('admin'), deleteExercise)
 
 export default router

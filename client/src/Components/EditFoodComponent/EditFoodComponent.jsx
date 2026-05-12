@@ -26,10 +26,9 @@ const EditFoodComponent = () => {
         e.preventDefault()
         setIsSubmitting(true)
         const formData = new FormData(e.target)
-        const data = Object.fromEntries(formData)
         try {
-            await customFetch.patch(`/food/${foodId}`, data)
-            toast.success('Food updated!')
+            await customFetch.patch(`/food/${foodId}`, formData)
+            toast.success('Comida actualizada!')
             navigate('/home/admin/all-food')
         } catch (error) {
             toast.error(error?.response?.data?.msg)
@@ -41,7 +40,7 @@ const EditFoodComponent = () => {
     if (!food) return <div>Cargando...</div>
 
     return (
-        <form onSubmit={handleSubmit} className="admin-add-food-container">
+        <form onSubmit={handleSubmit} className="admin-add-food-container" encType='multipart/form-data'>
             <div className="admin-add-food-logo">
                 <PiBarbellLight size={75} color='#0099ff'/>
             </div>
@@ -106,6 +105,14 @@ const EditFoodComponent = () => {
                         <input type="number" name='dietaryFiber' step=".01" defaultValue={food.dietaryFiber} />
                     </div>
                 </div>
+            </div>
+            <div className="admin-add-food-image">
+                <label htmlFor="image">
+                    <div className="area">
+                        <p>Imagen</p>
+                        <input type="file" name='image' id='image' accept='image/*'/>
+                    </div>
+                </label>
             </div>
             <div className="admin-add-food-button">
                 <button type='submit' disabled={isSubmitting}>

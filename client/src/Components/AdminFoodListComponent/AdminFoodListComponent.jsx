@@ -29,10 +29,10 @@ const AdminFoodListComponent = () => {
     }, [])
 
     const handleDelete = async (foodId) => {
-        if (!window.confirm('Are you sure you want to delete this food?')) return
+        if (!window.confirm('¿Estás seguro de que quieres eliminar esta comida?')) return
         try {
             await customFetch.delete(`/food/${foodId}`)
-            toast.success('Food deleted')
+            toast.success('Comida eliminada')
             fetchAllFood()
         } catch (error) {
             toast.error(error?.response?.data?.msg)
