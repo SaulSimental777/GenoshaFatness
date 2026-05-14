@@ -14,10 +14,13 @@ const LoginComponent = () => {
       try {
         const response = await customFetch.get('/auth/checkUser')
         if(response.data === true) {
-          toast.success('Bienvenido de vuelta!')
+          toast.success('Welcome Back!')
           navigate('/home')
         }
-      } catch (error) {}
+      } catch (error) {
+        // Token expired or invalid — clear it
+        localStorage.removeItem('token')
+      }
     }
     checkUser()
   }, [])

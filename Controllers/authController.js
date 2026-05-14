@@ -46,5 +46,11 @@ export const checkLoggedUser = async (req, res) => {
     if (!authHeader || !authHeader.startsWith('Bearer ')) {
         return res.json(false);
     }
-    return res.json(true)
+    try {
+        const token = authHeader.split(' ')[1]
+        verifyJWT(token) // this will throw if expired
+        return res.json(true)
+    } catch (error) {
+        return res.json(false) // token expired or invalid
+    }
 }
