@@ -5,8 +5,8 @@ export const GOAL_CATEGORY = {
 }
 
 export const GENDER_CATEGORY = {
-    MALE: 'Hombre',
-    FEMALE: 'Mujer'
+    MALE: 'Masculino',
+    FEMALE: 'Femenino'
 }
 
 export const PAL_CATEGORY = {
@@ -19,7 +19,7 @@ export const PAL_CATEGORY = {
 }
 
 export const WORKOUT_DIFFICULTY = {
-    FACIL: 'Facil',
+    FACIL: 'Fácil',
     INTERMEDIO: 'Intermedio',
-    DIFICIL: 'Dificil'
+    DIFICIL: 'Difícil'
 }
